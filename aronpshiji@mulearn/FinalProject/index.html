@@ -1,0 +1,82 @@
+cat > index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Scalable Web App</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .icon {
+      font-size: 3rem;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    h1 { color: #58a6ff; font-size: 2.5rem; text-align: center; }
+    p  { color: #8b949e; font-size: 1.1rem; text-align: center; }
+    .badges {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 8px;
+    }
+    .badge {
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    .green  { background: #238636; color: #fff; }
+    .blue   { background: #1f6feb; color: #fff; }
+    .orange { background: #9e6a03; color: #fff; }
+    .cards {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 16px 24px;
+      text-align: center;
+      min-width: 150px;
+    }
+    .card .num { font-size: 2rem; font-weight: bold; color: #58a6ff; }
+    .card .label { font-size: 0.85rem; color: #8b949e; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <div class="icon">🚀</div>
+  <h1>My Scalable Web App</h1>
+  <p>Deployed on Kubernetes — Built by Aron P Shiji</p>
+  <div class="badges">
+    <span class="badge green">✅ Pipeline Working</span>
+    <span class="badge blue">☸️ Kubernetes</span>
+    <span class="badge orange">🐋 Docker</span>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="num">3</div><div class="label">Replicas Running</div></div>
+    <div class="card"><div class="num">1</div><div class="label">Cluster</div></div>
+    <div class="card"><div class="num">✓</div><div class="label">Self-Healing</div></div>
+  </div>
+</body>
+</html>
+EOF
